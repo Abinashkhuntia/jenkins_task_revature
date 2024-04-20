@@ -14,8 +14,8 @@ pipeline {
         stage('remove the existing container and images') {
             steps {
                 script {
-                    sh "docker rm -f $(docker ps -a -q)"
-                    sh "docker rmi -f $(docker images -q)"
+                    sh "docker rm -f $$(docker ps -a -q)"
+                    sh "docker rmi -f $$(docker images -q)"
                 }
             }
         }
