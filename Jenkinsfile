@@ -14,8 +14,8 @@ pipeline {
         stage('remove the existing container and images') {
             steps {
                 script {
-                    sh "docker rm demoapp "
-                    sh "docker rmi ${IMAGE}:lts "
+                    sh "docker rm demoapp || true"
+                    sh "docker rmi ${IMAGE}:lts || true"
                 }
             }
         }
